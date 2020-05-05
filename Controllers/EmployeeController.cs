@@ -31,14 +31,14 @@ namespace AspNetCrud.Controllers {
         }
 
         [HttpPost]
-        public IActionResult Post(Employee employee) {
+        public IActionResult Post([FromBody]Employee employee) {
             this.employees.Add(employee);
             return Ok();
         }
 
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put(int id, Employee employee) {
+        public IActionResult Put(int id, [FromBody]Employee employee) {
             var foundEmployee = this.employees.Find(emp => emp.Id == id);
             if(foundEmployee == null){
                 return NotFound();
