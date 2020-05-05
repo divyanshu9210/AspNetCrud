@@ -29,5 +29,36 @@ namespace AspNetCrud.Controllers {
                 return Ok(employee);
             }
         }
+
+        [HttpPost]
+        public IActionResult Post(Employee employee) {
+            this.employees.Add(employee);
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        public IActionResult Put(int id, Employee employee) {
+            var foundEmployee = this.employees.Find(emp => emp.Id == id);
+            if(foundEmployee == null){
+                return NotFound();
+            }
+            foundEmployee.Id = employee.Id;
+            foundEmployee.Name = employee.Name;
+            foundEmployee.Email = employee.Email;
+            return Ok();
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public IActionResult Delete(int id) {
+            var index = this.employees.FindIndex(emp => emp.Id == id);
+            if(index < 0){
+                return NotFound();
+            }
+            this.employees.RemoveAt(index);
+            return Ok();
+        }
+
     }
 }
