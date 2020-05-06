@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using AspNetCrud.Models;
+using AspNetCrud.Providers;
 
 namespace AspNetCrud.Controllers {
 
@@ -15,7 +16,9 @@ namespace AspNetCrud.Controllers {
         
         [HttpGet]
         public IActionResult Get() {
-            return Ok(this.employees);
+            EmployeeProvider provider = new EmployeeProvider("");
+            var employees = provider.Get();
+            return Ok(employees);
         }
 
         [HttpGet]

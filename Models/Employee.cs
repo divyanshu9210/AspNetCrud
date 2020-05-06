@@ -1,3 +1,5 @@
+using System.Data.SqlClient;
+
 namespace AspNetCrud.Models {
     public class Employee {
         public int Id { get ; set; }

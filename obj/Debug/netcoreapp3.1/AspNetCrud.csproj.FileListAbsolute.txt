@@ -16,3 +16,10 @@ D:\Aman\AspNetCrud\obj\Debug\netcoreapp3.1\staticwebassets\AspNetCrud.StaticWebA
 D:\Aman\AspNetCrud\obj\Debug\netcoreapp3.1\staticwebassets\AspNetCrud.StaticWebAssets.xml
 D:\Aman\AspNetCrud\obj\Debug\netcoreapp3.1\AspNetCrud.dll
 D:\Aman\AspNetCrud\obj\Debug\netcoreapp3.1\AspNetCrud.pdb
+D:\Aman\AspNetCrud\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\Aman\AspNetCrud\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Aman\AspNetCrud\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Aman\AspNetCrud\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Aman\AspNetCrud\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Aman\AspNetCrud\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Aman\AspNetCrud\obj\Debug\netcoreapp3.1\AspNetCrud.csproj.CopyComplete
