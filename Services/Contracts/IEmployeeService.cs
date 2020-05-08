@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using AspNetCrud.Models;
 
-namespace AspNetCrud.Providers.Contracts {
-    public interface IEmployeeProvider 
+namespace AspNetCrud.Services.Contracts {
+    public interface IEmployeeService
     {
         /// <summary>
         /// Get all Employees
@@ -11,7 +11,7 @@ namespace AspNetCrud.Providers.Contracts {
         List<Employee> Get();
 
         /// <summary>
-        /// Get Employee based on Id
+        /// Get Employee based on a id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>

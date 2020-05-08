@@ -1,15 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using AspNetCrud.Providers;
+using AspNetCrud.Providers.Contracts;
+using AspNetCrud.Services;
+using AspNetCrud.Services.Contracts;
 
 namespace AspNetCrud
 {
@@ -26,6 +23,12 @@ namespace AspNetCrud
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            // Services dependencies
+            services.AddTransient<IEmployeeService, EmployeeService>();
+            // Providers dependencies
+            services.AddTransient<IEmployeeProvider, EmployeeProvider>(
+                serviceProvider => new EmployeeProvider(this.Configuration["ConnectionString"])
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

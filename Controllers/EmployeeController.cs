@@ -1,12 +1,19 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using AspNetCrud.Models;
-using AspNetCrud.Providers;
+using AspNetCrud.Services.Contracts;
 
-namespace AspNetCrud.Controllers {
+namespace AspNetCrud.Controllers
+{
 
     [Route("{controller}")]
     public class EmployeeController : ControllerBase {
+
+        private readonly IEmployeeService _employeeService;
+        public EmployeeController(IEmployeeService employeeService)
+        {
+            _employeeService = employeeService;
+        }
 
         private List<Employee> employees = new List<Employee>() {
                 new Employee() { Id = 1, Name = "Aman", Email = "amanbarnwalce@gmail.com" },
@@ -16,15 +23,14 @@ namespace AspNetCrud.Controllers {
         
         [HttpGet]
         public IActionResult Get() {
-            EmployeeProvider provider = new EmployeeProvider("");
-            var employees = provider.Get();
+            var employees = this._employeeService.Get();
             return Ok(employees);
         }
 
         [HttpGet]
         [Route("{id}")]
         public IActionResult Get(int id) {
-            var employee = employees.Find(emp => emp.Id == id);
+            Employee employee = _employeeService.Get(id);
             if(employee == null) {
                 return NotFound();
             }
@@ -35,7 +41,7 @@ namespace AspNetCrud.Controllers {
 
         [HttpPost]
         public IActionResult Post([FromBody]Employee employee) {
-            this.employees.Add(employee);
+            _employeeService.Post(employee);
             return Ok();
         }
 
