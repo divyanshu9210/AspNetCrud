@@ -60,6 +60,34 @@ namespace AspNetCrud.Providers {
             }
         }
 
+        public void Put(int id, Employee employee)
+        {
+             using(var connection = new SqlConnection(_connectionString)){
+                 connection.Open();
+                 using(var cmd = new SqlCommand()){
+                     cmd.Connection = connection;
+                     cmd.CommandText = "Update Employees set Name = @Name, Email = @Email where Id = @Id";
+                     cmd.Parameters.Add(new SqlParameter("@Name", employee.Name));
+                     cmd.Parameters.Add(new SqlParameter("@Email", employee.Email));
+                     cmd.Parameters.Add(new SqlParameter("@Id", id));
+                     cmd.ExecuteNonQuery();
+                 }
+             }
+        }
+
+        public void Delete(int id){
+            using(var connection = new SqlConnection(_connectionString)){
+                connection.Open();
+                using(var cmd = new SqlCommand()){
+                    cmd.Connection = connection;
+                    cmd.CommandText = "Delete from Employees where Id = @id";
+                    cmd.Parameters.Add(new SqlParameter("@id", id));
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+
         private Employee ParseEntity(SqlDataReader reader){
             Employee employee = new Employee();
             int index;

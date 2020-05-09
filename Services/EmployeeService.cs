@@ -24,5 +24,14 @@ namespace AspNetCrud.Services {
         {
             _provider.Post(employee);
         }
+
+        public void Put(int id, Employee employee)
+        {
+            _provider.Put(id, employee);
+        }
+
+        public void Delete(int id){
+            _provider.Delete(id);
+        }
     }
 }

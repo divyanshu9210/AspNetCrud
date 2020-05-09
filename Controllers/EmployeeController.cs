@@ -48,24 +48,14 @@ namespace AspNetCrud.Controllers
         [HttpPut]
         [Route("{id}")]
         public IActionResult Put(int id, [FromBody]Employee employee) {
-            var foundEmployee = this.employees.Find(emp => emp.Id == id);
-            if(foundEmployee == null){
-                return NotFound();
-            }
-            foundEmployee.Id = employee.Id;
-            foundEmployee.Name = employee.Name;
-            foundEmployee.Email = employee.Email;
+            _employeeService.Put(id, employee);
             return Ok();
         }
 
         [HttpDelete]
         [Route("{id}")]
         public IActionResult Delete(int id) {
-            var index = this.employees.FindIndex(emp => emp.Id == id);
-            if(index < 0){
-                return NotFound();
-            }
-            this.employees.RemoveAt(index);
+            _employeeService.Delete(id);
             return Ok();
         }
 

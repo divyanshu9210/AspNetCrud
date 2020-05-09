@@ -22,5 +22,17 @@ namespace AspNetCrud.Services.Contracts {
         /// </summary>
         /// <param name="employee"></param>
         void Post(Employee employee);
+
+        /// <summary>
+        /// Updating an employee
+        /// </summary>
+        /// <param name="employee"></param>
+        void Put(int id, Employee employee);
+
+        /// <summary>
+        /// Delete an employee
+        /// </summary>
+        /// <param name="id"></param>
+        void Delete(int id);
     }
 }
