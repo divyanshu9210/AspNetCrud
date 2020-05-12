@@ -23,3 +23,12 @@ D:\Aman\AspNetCrud\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 D:\Aman\AspNetCrud\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Aman\AspNetCrud\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Aman\AspNetCrud\obj\Debug\netcoreapp3.1\AspNetCrud.csproj.CopyComplete
+D:\Aman\AspNetCrud\bin\Debug\netcoreapp3.1\JWT.dll
+D:\Aman\AspNetCrud\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Aman\AspNetCrud\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Aman\AspNetCrud\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Aman\AspNetCrud\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\Aman\AspNetCrud\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\Aman\AspNetCrud\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Aman\AspNetCrud\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\Aman\AspNetCrud\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll

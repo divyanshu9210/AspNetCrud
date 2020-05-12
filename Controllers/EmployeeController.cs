@@ -2,11 +2,13 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using AspNetCrud.Models;
 using AspNetCrud.Services.Contracts;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AspNetCrud.Controllers
 {
 
     [Route("{controller}")]
+    [Authorize]
     public class EmployeeController : ControllerBase {
 
         private readonly IEmployeeService _employeeService;
