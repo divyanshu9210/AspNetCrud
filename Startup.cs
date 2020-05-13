@@ -46,6 +46,7 @@ namespace AspNetCrud
 
             // Services dependencies
             services.AddTransient<IEmployeeService, EmployeeService>();
+            services.AddTransient<IJwtService, JwtService>();
             // Providers dependencies
             services.AddTransient<IEmployeeProvider, EmployeeProvider>(
                 serviceProvider => new EmployeeProvider(this.Configuration["ConnectionString"])
